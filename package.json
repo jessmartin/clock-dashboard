@@ -1,0 +1,48 @@
+{
+  "name": "clock-dashboard",
+  "version": "0.1.0",
+  "description": "clock-dashboard - a DXOS application",
+  "private": true,
+  "scripts": {
+    "build": "NODE_OPTIONS=\"--max-old-space-size=4096\" tsc --noEmit && vite build",
+    "deploy": "NODE_OPTIONS=\"--max-old-space-size=4096\" dx app publish",
+    "preview": "vite preview",
+    "serve": "vite",
+    "storybook": "start-storybook -p 9009 --no-open"
+  },
+  "dependencies": {
+    "@dxos/client": "0.1.45",
+    "@dxos/config": "0.1.45",
+    "@dxos/vault": "0.1.45",
+    "@dxos/react-client": "0.1.45",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@dxos/aurora": "0.1.45",
+    "@dxos/react-appkit": "0.1.45",
+    "@phosphor-icons/react": "^2.0.5",
+    "react-router-dom": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@dxos/cli": "0.1.45",
+    "typescript": "^4.8.4",
+    "vite": "^4.3.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^3.0.1",
+    "vite-plugin-pwa": "^0.14.1",
+    "workbox-window": "^6.5.4",
+    "@dxos/aurora-theme": "0.1.45",
+    "tailwindcss": "~3.2.7",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.21",
+    "@storybook/addon-essentials": "^7.0.6",
+    "@storybook/addon-interactions": "^7.0.6",
+    "@storybook/addon-links": "^7.0.6",
+    "@storybook/builder-vite": "^7.0.6",
+    "@storybook/core-server": "^7.0.6",
+    "@storybook/mdx2-csf": "^1.0.0",
+    "@storybook/react": "^7.0.6",
+    "@storybook/react-vite": "^7.0.6"
+  }
+}
