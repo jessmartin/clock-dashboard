@@ -8,14 +8,14 @@ import {
 } from "@dxos/react-appkit";
 import { ClientProvider } from "@dxos/react-client";
 import { Welcome } from "./Welcome";
-import { Config, Dynamics, Defaults } from "@dxos/config";
+import { Config, Defaults } from "@dxos/config";
 import { useRegisterSW } from "virtual:pwa-register/react";
 import { ErrorBoundary } from "./ErrorBoundary";
 
 import "./index.css";
 
 // Dynamics allows configuration to be supplied by the hosting KUBE.
-const config = async () => new Config(await Dynamics(), Defaults());
+const config = async () => new Config(Defaults());
 
 export const App = () => {
   const serviceWorker = useRegisterSW();
