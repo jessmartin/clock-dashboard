@@ -8,7 +8,6 @@ package:
         outdir: out/clock-dashboard
 runtime:
   client:
-    remoteSource: http://halo.dxos.org/vault.html
     storage:
       persistent: true
   services:
