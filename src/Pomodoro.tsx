@@ -30,7 +30,6 @@ export const Pomodoro = () => {
         <button
           className="button"
           onClick={() => {
-            console.log("starting pomodoro");
             const timer = new Expando({
               startedAt: Date.now(),
               duration: 2500, //25 * 60 * 1000,
@@ -58,7 +57,6 @@ export const Pomodoro = () => {
             <button
               className="button"
               onClick={() => {
-                console.log("resetting pomodoro");
                 timer.duration = 2500; //25 * 60 * 1000;
                 timer.startedAt = Date.now();
               }}
