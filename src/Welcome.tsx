@@ -15,7 +15,7 @@ export const Welcome = ({ name }: { name: string }) => {
     setTimezone(localTimezone);
   }, [identity]);
   return (
-    <div className="flex justify-center align-middle h-full items-center">
+    <div className="flex justify-center h-full items-center flex-col">
       {timezone && <Clock timezone={timezone} />}
       <Pomodoro />
     </div>
