@@ -32,7 +32,7 @@ export const Pomodoro = () => {
           onClick={() => {
             const timer = new Expando({
               startedAt: Date.now(),
-              duration: 2500, //25 * 60 * 1000,
+              duration: 25 * 60 * 1000,
               type: "timer",
             });
             space!.db.add(timer);
@@ -46,7 +46,7 @@ export const Pomodoro = () => {
           <div className="text-[10vh]">{remainingTimeString(timer)}</div>
           {remainingTime(timer) > 0 ? (
             <button
-              className="button bg-red-400"
+              className="cancel-button"
               onClick={() => {
                 timer.duration = 0;
               }}
@@ -57,7 +57,7 @@ export const Pomodoro = () => {
             <button
               className="button"
               onClick={() => {
-                timer.duration = 2500; //25 * 60 * 1000;
+                timer.duration = 25 * 60 * 1000;
                 timer.startedAt = Date.now();
               }}
             >
