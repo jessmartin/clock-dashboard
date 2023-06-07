@@ -4,7 +4,7 @@ interface ClockProps {
   timezone: string;
 }
 
-const Clock: React.FC<ClockProps> = ({ timezone }) => {
+export const Clock: React.FC<ClockProps> = ({ timezone }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -35,5 +35,3 @@ const Clock: React.FC<ClockProps> = ({ timezone }) => {
     </div>
   );
 };
-
-export default Clock;
