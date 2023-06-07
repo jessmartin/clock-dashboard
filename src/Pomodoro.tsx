@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useQuery, useSpaces } from "@dxos/react-client";
+import { useQuery, useSpace, useSpaces } from "@dxos/react-client";
 import { Expando } from "@dxos/react-client";
 import { ShellProvider } from "@dxos/react-shell";
 
 export const Pomodoro = () => {
-  const [space] = useSpaces();
+  const space = useSpace("clock-space") || useSpaces()[0];
   const [timer] = useQuery(space, { type: "timer" });
 
   const remainingTime = (timer: Expando) => {
