@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useQuery, useSpaces } from "@dxos/react-client";
 import { Expando } from "@dxos/react-client";
+import { ShellProvider } from "@dxos/react-shell";
 
 export const Pomodoro = () => {
   const [space] = useSpaces();
@@ -20,52 +21,54 @@ export const Pomodoro = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setNow(Date.now());
-    }, 1000);
+    }, 100);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="pomodoro">
-      {!timer && (
-        <button
-          className="button"
-          onClick={() => {
-            const timer = new Expando({
-              startedAt: Date.now(),
-              duration: 25 * 60 * 1000,
-              type: "timer",
-            });
-            space!.db.add(timer);
-          }}
-        >
-          Start Pomodoro
-        </button>
-      )}
-      {timer && (
-        <div className="flex justify-center flex-col">
-          <div className="text-[10vh]">{remainingTimeString(timer)}</div>
-          {remainingTime(timer) > 0 ? (
-            <button
-              className="cancel-button"
-              onClick={() => {
-                timer.duration = 0;
-              }}
-            >
-              Stop
-            </button>
-          ) : (
-            <button
-              className="button"
-              onClick={() => {
-                timer.duration = 25 * 60 * 1000;
-                timer.startedAt = Date.now();
-              }}
-            >
-              Next Pomodoro
-            </button>
-          )}
-        </div>
-      )}
-    </div>
+    <ShellProvider space={space}>
+      <div className="pomodoro">
+        {!timer && (
+          <button
+            className="button"
+            onClick={() => {
+              const timer = new Expando({
+                startedAt: Date.now(),
+                duration: 25 * 60 * 1000,
+                type: "timer",
+              });
+              space!.db.add(timer);
+            }}
+          >
+            Start Pomodoro
+          </button>
+        )}
+        {timer && (
+          <div className="flex justify-center flex-col">
+            <div className="text-[10vh]">{remainingTimeString(timer)}</div>
+            {remainingTime(timer) > 0 ? (
+              <button
+                className="cancel-button"
+                onClick={() => {
+                  timer.duration = 0;
+                }}
+              >
+                Stop
+              </button>
+            ) : (
+              <button
+                className="button"
+                onClick={() => {
+                  timer.duration = 25 * 60 * 1000;
+                  timer.startedAt = Date.now();
+                }}
+              >
+                Next Pomodoro
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+    </ShellProvider>
   );
 };
