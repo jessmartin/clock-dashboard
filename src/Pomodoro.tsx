@@ -45,7 +45,7 @@ export const Pomodoro = () => {
         )}
         {timer && (
           <div className="flex justify-center flex-col">
-            <div className="text-[10vh]">{remainingTimeString(timer)}</div>
+            <div className="text-[5rem]">{remainingTimeString(timer)}</div>
             {remainingTime(timer) > 0 ? (
               <button
                 className="cancel-button"

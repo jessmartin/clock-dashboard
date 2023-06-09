@@ -21,7 +21,3 @@ export const Welcome = ({ name }: { name: string }) => {
     </div>
   );
 };
-
-// Clock data:
-// startedAt: timestamp
-// duration: number

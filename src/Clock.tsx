@@ -19,18 +19,26 @@ export const Clock: React.FC<ClockProps> = ({ timezone }) => {
 
   const getFormattedTime = (date: Date) => {
     const options: Intl.DateTimeFormatOptions = {
-      hour: "2-digit",
+      hour: "numeric",
       minute: "2-digit",
-      hour12: false,
+      hour12: true,
       timeZone: timezone,
+      // disable am/pm
     };
-    return date.toLocaleTimeString([], options);
+    const formattedTime = date.toLocaleTimeString([], options);
+    // drop the am/pm from the end
+    return formattedTime.slice(0, -3);
   };
 
   return (
     <div className="clock">
-      <div className="leading-none text-[30vw] text-slate-900">
+      <div className="leading-none text-[20rem] text-slate-900">
         {getFormattedTime(time)}
+      </div>
+      {/* show the day of the week and the date */}
+      <div className="text-[3rem] text-slate-900 text-center">
+        {time.toLocaleDateString("en-US", { weekday: "long" })},{" "}
+        {time.toLocaleDateString("en-US", { month: "long", day: "numeric" })}
       </div>
     </div>
   );
