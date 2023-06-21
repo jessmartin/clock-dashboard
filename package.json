@@ -11,20 +11,20 @@
     "storybook": "start-storybook -p 9009 --no-open"
   },
   "dependencies": {
-    "@dxos/aurora": "0.1.45",
-    "@dxos/client": "0.1.45",
-    "@dxos/config": "0.1.45",
-    "@dxos/react-appkit": "0.1.45",
-    "@dxos/react-client": "0.1.45",
-    "@dxos/vault": "0.1.45",
+    "@dxos/aurora": "0.1.47",
+    "@dxos/client": "0.1.47",
+    "@dxos/config": "0.1.47",
+    "@dxos/react-appkit": "0.1.47",
+    "@dxos/react-client": "0.1.47",
+    "@dxos/vault": "0.1.47",
     "@phosphor-icons/react": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
-    "@dxos/aurora-theme": "0.1.45",
-    "@dxos/cli": "0.1.45",
+    "@dxos/aurora-theme": "0.1.47",
+    "@dxos/cli": "0.1.47",
     "@storybook/addon-essentials": "^7.0.6",
     "@storybook/addon-interactions": "^7.0.6",
     "@storybook/addon-links": "^7.0.6",

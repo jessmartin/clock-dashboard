@@ -5,7 +5,6 @@ import { ClientProvider } from "@dxos/react-client";
 import { Welcome } from "./Welcome";
 import { Config, Defaults } from "@dxos/config";
 import { useRegisterSW } from "virtual:pwa-register/react";
-import { ToastProvider } from "@dxos/aurora";
 
 const config = async () => new Config(Defaults());
 
@@ -13,10 +12,8 @@ export const App = () => {
   const serviceWorker = useRegisterSW();
   return (
     <ClientProvider config={config}>
-      <ToastProvider>
-        <Welcome name="clock-dashboard" />
-        <ServiceWorkerToastContainer {...serviceWorker} />
-      </ToastProvider>
+      <Welcome name="clock-dashboard" />
+      <ServiceWorkerToastContainer {...serviceWorker} />
     </ClientProvider>
   );
 };
