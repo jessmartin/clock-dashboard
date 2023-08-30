@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useIdentity } from "@dxos/react-client";
+import { useIdentity } from "@dxos/react-client/halo";
 import { Clock } from "./Clock";
 import { Pomodoro } from "./Pomodoro";
 
 export const Welcome = ({ name }: { name: string }) => {
   const isDark = document.documentElement.classList.contains("dark");
-  const identity = useIdentity({ login: true });
+  const identity = useIdentity();
   const [timezone, setTimezone] = useState("");
   useEffect(() => {
     if (identity) {
