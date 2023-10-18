@@ -1,11 +1,11 @@
 version: 1
 package:
   modules:
-    - name: clock-dashboard
+    - name: "clock-dashboard"
       type: dxos:type/app
       build:
         command: npm run build
-        outdir: out/clock-dashboard
+        outdir: "out/clock-dashboard"
 runtime:
   client:
     storage:
