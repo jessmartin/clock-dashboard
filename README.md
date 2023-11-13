@@ -1,5 +1,7 @@
 # PomoClock
 
+![Pomodoro + Clock](https://github.com/jessmartin/clock-dashboard/assets/27258/03f3429e-d1a6-409c-9165-c878dc8d26a1)
+
 PomoClock is a simple app featuring a Clock and a Pomodoro. The pomodoro syncs across your devices using [DXOS](https://docs.dxos.org). 
 
 ## Built for me
