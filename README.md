@@ -1,11 +1,12 @@
-# clock-dashboard
+# PomoClock
 
-This app was created with the DXOS `bare` application template.
+PomoClock is a simple app featuring a Clock and a Pomodoro. The pomodoro syncs across your devices using [DXOS](https://docs.dxos.org). 
 
-- [x] Progressive Web App support
-- [x] React
-- [x] DXOS UI System
-- [x] Storybook
+## Built for me
+
+This is [Personal Software](https://www.robinsloan.com/notes/home-cooked-app/) - if you find it useful as well, wonderful! But it's mainly for my personal use.
+
+## Run
 
 Run the app with `npm`:
 
@@ -14,23 +15,8 @@ npm install
 npm run serve
 ```
 
-Build the app to the `out` folder:
+## Built with DXOS
 
-```bash
-npm run build
-```
+This app was built on DXOS. Learn more here:
 
-Deploy the app to a [DXOS Kube](https://docs.dxos.org/guide/kube):
-
-```bash
-npm run deploy
-```
-
-Run storybook in this project
-
-```bash
-npm run storybook
-```
-
-[📚 Using ECHO with React](https://docs.dxos.org/guide/react)
 [📚 DXOS Documentation](https://docs.dxos.org)
